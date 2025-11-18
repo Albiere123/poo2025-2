@@ -31,13 +31,14 @@ public class TestaQuiz {
 
                 case 1:
                     sistema.init();
-                    Question q = sistema.getNextQuestion();
-                    IO.println("Pergunta: " + q.getQuestion() + "\nAlternativas: " + q.getAnswers());
-                    String resposta = IO.readln("Resposta: ");
                     if (u == null) {
                         IO.println("Selecione um usuário primeiro...");
                         break;
-                    } else if (q.getAnswer().equals(resposta)) {
+                    }
+                    Question q = sistema.getNextQuestion();
+                    IO.println("Pergunta: " + q.getQuestion() + "\nAlternativas: " + q.getAnswers());
+                    String resposta = IO.readln("Resposta: ");
+                   if (q.getAnswer().equals(resposta)) {
                         IO.println("Resposta correta!");
                         sistema.addPoints(u, 10);
                     } else {
