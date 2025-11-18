@@ -52,4 +52,8 @@ public class User implements UserInterface{
         this.points += points;
     }
 
+    @Override
+    public String toString() {
+        return "Usuario[Username=" + username + ", Id=" + id + ", Points=" + points + "]";
+    }
 }

@@ -50,4 +50,9 @@ public class Question implements QuestionInterface {
     public void setTime(int time) {
         this.time = time;
     }
+
+    @Override
+    public String toString() {
+        return "Question["+question+", answers=" + answers + ", time=" + time + "]";
+    }
 }

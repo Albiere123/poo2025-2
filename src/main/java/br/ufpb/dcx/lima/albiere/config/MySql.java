@@ -4,7 +4,6 @@ import br.ufpb.dcx.lima.albiere.question.Question;
 import br.ufpb.dcx.lima.albiere.user.User;
 import java.sql.*;
 import java.util.*;
-import br.ufpb.dcx.lima.albiere.config.ConnectionSQL;
 
 public class MySql {
 
@@ -19,7 +18,7 @@ public class MySql {
 
     /**
      * Cria as tabelas necessárias.
-     * ATENÇÃO: A tabela 'quiz_scores' foi modificada para sua classe User.
+     *
      */
     public void createTablesIfNotExists() {
 
@@ -97,7 +96,7 @@ public class MySql {
 
 
     /**
-     * [ATUALIZADO]
+     *
      * Salva uma lista de objetos User em lote.
      * Atualiza o nome de usuário caso ele mude e o high_score se for maior.
      *
@@ -132,7 +131,7 @@ public class MySql {
     }
 
     /**
-     * [ATUALIZADO]
+     *
      * Carrega todas as pontuações e retorna uma Lista de objetos User.
      *
      * @return Uma List<User> com todos os usuários do banco.
@@ -165,7 +164,7 @@ public class MySql {
     }
 
     /**
-     * [ATUALIZADO]
+     *
      * Busca os 10 melhores usuários e retorna uma Lista de objetos User.
      *
      * @return Uma List<User> ordenada, contendo o Top 10.

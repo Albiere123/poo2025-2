@@ -1,10 +1,7 @@
 package br.ufpb.dcx.lima.albiere;
 
 import br.ufpb.dcx.lima.albiere.config.MySql;
-import br.ufpb.dcx.lima.albiere.exceptions.IdExistsException;
-import br.ufpb.dcx.lima.albiere.exceptions.QuestionExistsException;
-import br.ufpb.dcx.lima.albiere.exceptions.QuestionNotExistsException;
-import br.ufpb.dcx.lima.albiere.exceptions.QuestionNumberIsNotValidException;
+import br.ufpb.dcx.lima.albiere.exceptions.*;
 import br.ufpb.dcx.lima.albiere.question.Question;
 import br.ufpb.dcx.lima.albiere.user.User;
 
@@ -35,11 +32,11 @@ public class QuestionSystemGerence {
         users.add(u);
     }
 
-    User getUser(int id) {
+    User getUser(int id) throws UserNotExistsException {
         for(User user : users) {
             if(user.getId() == id) return user;
         }
-        return null;
+        throw new UserNotExistsException("Usuário inexistente.");
     }
 
     void QuestionRegister(String question,  List<String> answers,  String answer, int time) throws QuestionExistsException {

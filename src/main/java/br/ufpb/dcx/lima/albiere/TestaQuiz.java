@@ -1,5 +1,6 @@
 package br.ufpb.dcx.lima.albiere;
 
+import br.ufpb.dcx.lima.albiere.exceptions.UserNotExistsException;
 import br.ufpb.dcx.lima.albiere.question.Question;
 import br.ufpb.dcx.lima.albiere.user.User;
 
@@ -33,14 +34,13 @@ public class TestaQuiz {
                     Question q = sistema.getNextQuestion();
                     IO.println("Pergunta: " + q.getQuestion() + "\nAlternativas: " + q.getAnswers());
                     String resposta = IO.readln("Resposta: ");
-                    if(u == null) {
+                    if (u == null) {
                         IO.println("Selecione um usuário primeiro...");
                         break;
-                    }else
-                    if(q.getAnswer().equals(resposta)) {
+                    } else if (q.getAnswer().equals(resposta)) {
                         IO.println("Resposta correta!");
                         sistema.addPoints(u, 10);
-                    }else {
+                    } else {
                         IO.println("Resposta incorreta!");
                     }
                     break;
@@ -48,7 +48,9 @@ public class TestaQuiz {
                 case 2:
                     try {
                         int id = Integer.parseInt(IO.readln("Insira o id do usuário: "));
+                    try {
                         u = sistema.getUser(id);
+                    } catch (UserNotExistsException e) {
                         if (u == null) {
                             IO.println("ID não encontrado! Registrando novo usuário...");
                             String username = IO.readln("Insira o username: ");
@@ -56,9 +58,12 @@ public class TestaQuiz {
                             sistema.UserRegister(username, id);
                             u = sistema.getUser(id);
                         }
-                    } catch (Exception e) {
+                    }
+                    }
+                    catch (Exception e) {
                         IO.println("Insira o ID do usuário!");
                     }
+
                     break;
 
                 case 3:
