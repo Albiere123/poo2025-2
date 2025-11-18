@@ -5,7 +5,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fd034522-94a5-453b-9357-138969633e5b" name="Changes" comment="Versão 0.0.1">
-      <change beforePath="$PROJECT_DIR$/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/ufpb/dcx/lima/albiere/TesteAlbiere.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/br/ufpb/dcx/lima/albiere/QuestionSystemGerence.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/br/ufpb/dcx/lima/albiere/TestaQuiz.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/br/ufpb/dcx/lima/albiere/config/ConnectionSQL.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/br/ufpb/dcx/lima/albiere/config/MySql.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/br/ufpb/dcx/lima/albiere/exceptions/IdExistsException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/br/ufpb/dcx/lima/albiere/exceptions/QuestionExistsException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/br/ufpb/dcx/lima/albiere/exceptions/QuestionNotExistsException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/br/ufpb/dcx/lima/albiere/exceptions/QuestionNumberIsNotValidException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/br/ufpb/dcx/lima/albiere/question/Question.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/br/ufpb/dcx/lima/albiere/question/QuestionInterface.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/br/ufpb/dcx/lima/albiere/user/User.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/br/ufpb/dcx/lima/albiere/user/UserInterface.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/ufpb/dcx/lima/albiere/TesteAlbiere.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -15,7 +29,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Interface" />
         <option value="Class" />
+        <option value="Exception" />
       </list>
     </option>
   </component>
@@ -30,8 +46,8 @@
 }</component>
   <component name="GithubPullRequestsUISettings">{
   &quot;selectedUrlAndAccountId&quot;: {
-    &quot;url&quot;: &quot;https://github.com/Albiere123/poo2025-2.git&quot;,
-    &quot;accountId&quot;: &quot;99bf744a-78e0-4157-912f-8a41b27307ed&quot;
+    &quot;url&quot;: &quot;https://github.com/Albiere123/poo2025-2&quot;,
+    &quot;accountId&quot;: &quot;9f25aabd-540e-4e12-8967-cab609ed5d26&quot;
   }
 }</component>
   <component name="ProjectColorInfo">{
@@ -42,32 +58,38 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.Main.executor": "Run",
-    "Application.TesteAlbiere.executor": "Run",
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "main",
-    "kotlin-language-version-configured": "true",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
+    &quot;Application.TestaQuiz.executor&quot;: &quot;Run&quot;,
+    &quot;Application.TesteAlbiere.executor&quot;: &quot;Run&quot;,
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultAutoModeForALLUsers.v1&quot;: &quot;true&quot;,
+    &quot;com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;junie.onboarding.icon.badge.shown&quot;: &quot;true&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;to.speed.mode.migration.done&quot;: &quot;true&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
-  <component name="RunManager">
-    <configuration default="true" type="JetRunConfigurationType">
-      <module name="poo2025-2" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
-      <module name="poo2025-2" />
-      <option name="filePath" />
-      <method v="2" />
-    </configuration>
+}</component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-9823dce3aa75-bf35d07a577b-intellij.indexing.shared.core-IU-252.25557.131" />
+        <option value="bundled-js-predefined-d6986cc7102b-b598e85cdad2-JavaScript-IU-252.25557.131" />
+      </set>
+    </attachedChunks>
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -76,6 +98,10 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1762862221741</updated>
+      <workItem from="1762898759278" duration="4396000" />
+      <workItem from="1762903494141" duration="3102000" />
+      <workItem from="1762906653167" duration="1111000" />
+      <workItem from="1763425000245" duration="3043000" />
     </task>
     <task id="LOCAL-00001" summary="Versão 0.0.1">
       <option name="closed" value="true" />
@@ -103,6 +129,9 @@
     </task>
     <option name="localTasksCounter" value="4" />
     <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Versão 0.0.1" />
